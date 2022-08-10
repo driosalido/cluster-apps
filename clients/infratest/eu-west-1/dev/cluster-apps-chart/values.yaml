@@ -1,0 +1,28 @@
+# Global Values
+repoUrl: "https://github.com/driosalido/cluster-apps.git"
+targetRevision: HEAD
+region: ""
+account: ""
+clusterName: ""
+
+# mysql Values
+mysql:
+  enable: false
+
+# App Mesh Values
+appMesh:
+  enable: false
+
+# AWS CloudWatch Metrics Values
+awsCloudWatchMetrics:
+  enable: false
+  serviceAccountName:
+
+# Kubernetes Dashboard Values
+kubernetesDashboard:
+  enable: false
+  serviceAccountName:
+
+# sparkOperator
+sparkOperator:
+  enable: false

@@ -1,18 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: apps
+  name: infratest-apps
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/driosalido/cluster-apps.git
     targetRevision: HEAD
-    path: chart
+    path: clients/infratest/eu-west-1/dev/cluster-apps-chart
     helm:
       values: |
-        mysql:
-          enable: true
+        region: "eu-west-1"
+        clusterName: "infratest-dev"
+
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
