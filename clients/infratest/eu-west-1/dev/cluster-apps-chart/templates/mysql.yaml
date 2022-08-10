@@ -10,7 +10,7 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: apps/mysql
+    path: charts/cluster-apps/mysql
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
