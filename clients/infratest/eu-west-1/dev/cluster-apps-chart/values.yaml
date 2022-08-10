@@ -21,4 +21,4 @@ mysql:
 
 # sparkOperator
 sparkOperator:
-  enable: false
+  enable: true
