@@ -12,8 +12,8 @@ awsCloudWatchMetrics:
 
 # Kubernetes Dashboard Values
 kubernetesDashboard:
-  enable: false
-  serviceAccountName:  
+  enable: true
+  serviceAccountName:  eks-admin
 
 # mysql Values
 mysql:
