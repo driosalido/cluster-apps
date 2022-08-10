@@ -6,6 +6,6 @@ version: 0.1.0
 appVersion: "1.0"
 
 dependencies:
-- name: mysql
+- name: bitnami/mysql
   version: 4.4.3
   repository: https://charts.bitnami.com/bitnami

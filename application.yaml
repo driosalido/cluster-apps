@@ -10,7 +10,6 @@ spec:
     targetRevision: HEAD
     path: chart
     helm:
-      release: apps
       values: |
         mysql:
           enable: true
