@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-apps
+  name: root-cluster-apps
   namespace: argocd
 spec:
   project: default
@@ -14,7 +14,7 @@ spec:
         region: "eu-west-1"
         clusterName: "infratest-dev"
       valueFiles:
-        - clients/infratest/eu-west-1/dev/cluster-apps-values.yaml
+        - ../../../clients/infratest/eu-west-1/dev/cluster-apps-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd
