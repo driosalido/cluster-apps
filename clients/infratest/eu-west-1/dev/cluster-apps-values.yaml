@@ -2,6 +2,8 @@
 region: "eu-west-1"
 account: "848782056238"
 clusterName: "infratest-dev"
+argocdProject: "cluster-apps-dev"
+namespaceTag: "dev"
 
 # AWS CloudWatch Metrics Values
 awsCloudWatchMetrics:

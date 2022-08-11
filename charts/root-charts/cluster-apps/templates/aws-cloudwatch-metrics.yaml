@@ -7,7 +7,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: default
+  project: {{ .Values.argocd.project }}
   source:
     repoURL: {{ .Values.repoUrl }}
     path: charts/apps-charts/aws-cloudwatch-metrics

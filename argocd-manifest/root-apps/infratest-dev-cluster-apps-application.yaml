@@ -4,15 +4,12 @@ metadata:
   name: root-cluster-apps
   namespace: argocd
 spec:
-  project: default
+  project: cluster-apps-dev
   source:
     repoURL: https://github.com/driosalido/cluster-apps.git
     targetRevision: HEAD
     path: charts/root-charts/cluster-apps
     helm:
-      values: |
-        region: "eu-west-1"
-        clusterName: "infratest-dev"
       valueFiles:
         - ../../../clients/infratest/eu-west-1/dev/cluster-apps-values.yaml
   destination:
