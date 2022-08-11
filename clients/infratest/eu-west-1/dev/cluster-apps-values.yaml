@@ -1,6 +1,4 @@
 # Global Values
-repoUrl: "https://github.com/driosalido/cluster-apps.git"
-targetRevision: HEAD
 region: "eu-west-1"
 account: "848782056238"
 clusterName: "infratest-dev"
@@ -17,7 +15,7 @@ kubernetesDashboard:
 
 # mysql Values
 mysql:
-  enable: false
+  enable: true
 
 # sparkOperator
 sparkOperator:
