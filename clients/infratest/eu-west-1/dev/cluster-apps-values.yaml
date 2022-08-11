@@ -1,0 +1,24 @@
+# Global Values
+repoUrl: "https://github.com/driosalido/cluster-apps.git"
+targetRevision: HEAD
+region: "eu-west-1"
+account: "848782056238"
+clusterName: "infratest-dev"
+
+# AWS CloudWatch Metrics Values
+awsCloudWatchMetrics:
+  enable: false
+  serviceAccountName:
+
+# Kubernetes Dashboard Values
+kubernetesDashboard:
+  enable: false
+  serviceAccountName: eks-admin
+
+# mysql Values
+mysql:
+  enable: true
+
+# sparkOperator
+sparkOperator:
+  enable: false

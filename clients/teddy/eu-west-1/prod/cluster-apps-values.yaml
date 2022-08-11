@@ -3,7 +3,7 @@ repoUrl: "https://github.com/driosalido/cluster-apps.git"
 targetRevision: HEAD
 region: ""
 account: ""
-clusterName: ""
+clusterName: "teddy-prod"
 
 # AWS CloudWatch Metrics Values
 awsCloudWatchMetrics:
@@ -12,13 +12,13 @@ awsCloudWatchMetrics:
 
 # Kubernetes Dashboard Values
 kubernetesDashboard:
-  enable: true
-  serviceAccountName:  eks-admin
+  enable: false
+  serviceAccountName:
 
 # mysql Values
 mysql:
-  enable: true
+  enable: false
 
 # sparkOperator
 sparkOperator:
-  enable: true
+  enable: false

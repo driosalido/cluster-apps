@@ -8,12 +8,13 @@ spec:
   source:
     repoURL: https://github.com/driosalido/cluster-apps.git
     targetRevision: HEAD
-    path: clients/infratest/eu-west-1/dev/cluster-apps-chart
+    path: charts/root-charts/infratest-apps
     helm:
       values: |
         region: "eu-west-1"
         clusterName: "infratest-dev"
-
+      valueFiles:
+        - clients/infratest/eu-west-1/dev/cluster-apps-values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

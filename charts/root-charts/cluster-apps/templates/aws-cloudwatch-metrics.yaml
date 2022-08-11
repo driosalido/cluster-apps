@@ -1,8 +1,8 @@
-{{- if and (.Values.kubernetesDashboard) (.Values.kubernetesDashboard.enable) -}}
+{{- if and (.Values.awsCloudWatchMetrics) (.Values.awsCloudWatchMetrics.enable) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard
+  name: aws-cloudwatch-metrics
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -10,18 +10,20 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: charts/cluster-apps/kubernetes-dashboard
+    path: charts/apps-charts/aws-cloudwatch-metrics
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
-        kubernetes-dashboard:
-        {{- toYaml .Values.kubernetesDashboard | nindent 10 }}
+        aws-cloudwatch-metrics:
+        {{- toYaml .Values.awsCloudWatchMetrics | nindent 10 }}
       parameters:
-      - name: kubernetes-dashboard.serviceAccount.name
-        value: {{ .Values.kubernetesDashboard.serviceAccountName }}
+      - name: aws-cloudwatch-metrics.clusterName
+        value: {{ .Values.clusterName }}
+      - name: aws-cloudwatch-metrics.serviceAccount.name
+        value: {{ .Values.awsCloudWatchMetrics.serviceAccountName }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: amazon-cloudwatch
   syncPolicy:
     automated:
       prune: true

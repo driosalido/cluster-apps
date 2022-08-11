@@ -1,8 +1,8 @@
-{{- if and (.Values.sparkOperator) (.Values.sparkOperator.enable) -}}
+{{- if and (.Values.mysql) (.Values.mysql.enable) -}}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: spark-operator
+  name: mysql
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -10,15 +10,15 @@ spec:
   project: default
   source:
     repoURL: {{ .Values.repoUrl }}
-    path: charts/cluster-apps/spark-operator
+    path: charts/apps-charts/mysql
     targetRevision: {{ .Values.targetRevision }}
     helm:
       values: |
-        spark-operator:
-        {{- toYaml .Values.sparkOperator | nindent 10 }}
+        mysql:
+        {{- toYaml .Values.mysql | nindent 10 }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: spark-operator
+    namespace: mysql
   syncPolicy:
     automated:
       prune: true
