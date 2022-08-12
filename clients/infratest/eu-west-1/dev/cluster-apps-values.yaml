@@ -15,8 +15,8 @@ kubernetesDashboard:
 
 # mysql Values
 mysql:
-  enable: false
+  enable: true
 
 # sparkOperator
 sparkOperator:
-  enable: false
+  enable: true
