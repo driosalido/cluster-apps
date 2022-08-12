@@ -15,10 +15,6 @@ kubernetesDashboard:
   enable: false
   serviceAccountName:
 
-# mysql Values
-mysql:
-  enable: false
-
 # sparkOperator
 sparkOperator:
   enable: false
