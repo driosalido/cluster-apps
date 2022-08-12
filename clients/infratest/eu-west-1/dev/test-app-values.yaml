@@ -12,4 +12,4 @@ wordpress:
 
 # mysql Values
 mysql:
-  enable: true
+  enable: false

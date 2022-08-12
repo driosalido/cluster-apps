@@ -10,7 +10,7 @@ awsCloudWatchMetrics:
 
 # Kubernetes Dashboard Values
 kubernetesDashboard:
-  enable: true
+  enable: false
   serviceAccountName: eks-admin
 
 # mysql Values
@@ -19,4 +19,4 @@ mysql:
 
 # sparkOperator
 sparkOperator:
-  enable: true
+  enable: false
