@@ -4,7 +4,7 @@ metadata:
   name: argocd-config
   namespace: argocd
 spec:
-  project: argocd
+  project: default
   source:
     repoURL: https://github.com/driosalido/cluster-apps.git
     targetRevision: HEAD
