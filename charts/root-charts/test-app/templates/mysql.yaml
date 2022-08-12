@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-{{ .Values.envTag }}
+  name: test-app-mysql-argoapp
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io

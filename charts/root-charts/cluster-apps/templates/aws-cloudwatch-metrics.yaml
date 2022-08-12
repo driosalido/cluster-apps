@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: aws-cloudwatch-metrics
+  name: aws-cloudwatch-metrics-app
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io

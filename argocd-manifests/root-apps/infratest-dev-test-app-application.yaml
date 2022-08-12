@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: test-app
+  name: test-app-argoapp
   namespace: argocd
   labels:
   - argocd.intenthq.com/chartType=root-chart
