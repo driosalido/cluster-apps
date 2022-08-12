@@ -1,0 +1,33 @@
+{{- if and (.Values.wordpress) (.Values.wordpress.enable) -}}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app-wordpress-{{ .Values.envTag }}
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: {{ .Values.argocdProject | default "default"}}
+  source:
+    repoURL: {{ .Values.repoUrl }}
+    path: charts/apps-charts/wordpress
+    targetRevision: {{ .Values.targetRevision }}
+    helm:
+      values: |
+        wordpress:
+        {{- toYaml .Values.wordpress | nindent 10 }}
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: {{ . Values.namespace }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
+    retry:
+      limit: 1
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 1m
+{{- end -}}

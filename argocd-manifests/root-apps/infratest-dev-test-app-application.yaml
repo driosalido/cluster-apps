@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: test-app
+  namespace: argocd
+  labels:
+  - argocd.intenthq.com/chartType=root-chart
+spec:
+  project: test-app
+  source:
+    repoURL: https://github.com/driosalido/cluster-apps.git
+    targetRevision: HEAD
+    path: charts/root-charts/test-app
+    helm:
+      values: |
+        argocdProject: "test-app"
+      valueFiles:
+        - ../../../clients/infratest/eu-west-1/dev/test-app-values.yaml
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
