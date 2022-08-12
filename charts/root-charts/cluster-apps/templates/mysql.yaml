@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: mysql-{{ .Values.envTag }}
+  name: mysql
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -18,7 +18,7 @@ spec:
         {{- toYaml .Values.mysql | nindent 10 }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: mysql-{{ .Values.envTag }}
+    namespace: mysql
   syncPolicy:
     automated:
       prune: true

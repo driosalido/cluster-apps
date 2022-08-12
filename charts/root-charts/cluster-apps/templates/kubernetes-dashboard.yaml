@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kubernetes-dashboard-{{ .Values.envTag }}
+  name: kubernetes-dashboard
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -21,7 +21,7 @@ spec:
         value: {{ .Values.kubernetesDashboard.serviceAccountName }}
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system-{{ .Values.envTag }}
+    namespace: kube-system
   syncPolicy:
     automated:
       prune: true
