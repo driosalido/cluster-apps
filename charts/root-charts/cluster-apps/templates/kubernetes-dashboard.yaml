@@ -7,7 +7,7 @@ metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
-  project: {{ .Values.argocd.project }}
+  project: {{ .Values.argocdProject | default "default"}}
   source:
     repoURL: {{ .Values.repoUrl }}
     path: charts/apps-charts/kubernetes-dashboard
